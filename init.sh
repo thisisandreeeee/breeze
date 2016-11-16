@@ -27,4 +27,5 @@ tmux source ~/.tmux.conf
 # download zsh, and oh my zsh. then, update zshrc.
 sudo apt-get install zsh
 chsh -s $(which zsh)
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 cp .zshrc ~/.zshrc
