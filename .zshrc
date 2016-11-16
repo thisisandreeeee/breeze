@@ -5,7 +5,7 @@ export ZSH=/Users/andre/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kphoen"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -74,12 +74,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export PATH="/Users/andre/miniconda3/bin:$PATH"
-export PYTHONPATH=~/xgboost/python-package
-export PATH=${PATH}:/usr/local/mysql/bin
-export PATH=${PATH}:/usr/local/spark/bin
-export PATH=$PATH:/usr/local/sbin
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -87,9 +81,4 @@ export PATH=$PATH:/usr/local/sbin
 #
 # Example aliases
 alias src='source ~/.zshrc'
-alias sa3='source activate py3'
-alias sa2='source activate py2'
 alias zshrc='vim ~/.zshrc'
-alias botha='ssh andre.tan@botha-client01.sjc1.playphone.cc'
-eval "$(thefuck --alias)"
-eval "$(thefuck --alias FUCK)"
