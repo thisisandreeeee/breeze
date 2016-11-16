@@ -14,7 +14,6 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -87,7 +86,4 @@ function! VisualSelection(direction, extra_filter) range
 	elseif a:direction == 'replace'
 		call CmdLine("%s" . '/'. l:pattern . '/')
 	endif
-
-	eeeeeeeeeeeeeeeeee
-eeeeeeeeeeeeeeeeeeeee
 endfunction
