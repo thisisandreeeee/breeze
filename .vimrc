@@ -1,4 +1,5 @@
 set nocompatible              " required
+set backspace=2
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -14,7 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -23,6 +23,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tmux-plugins/vim-tmux'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,7 +88,13 @@ function! VisualSelection(direction, extra_filter) range
 	elseif a:direction == 'replace'
 		call CmdLine("%s" . '/'. l:pattern . '/')
 	endif
-
-	eeeeeeeeeeeeeeeeee
-eeeeeeeeeeeeeeeeeeeee
 endfunction
+
+if exists("b:did_indent")
+	    finish
+endif
+let b:did_indent = 1
+
+setlocal indentexpr=
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
