@@ -24,6 +24,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,7 +64,13 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
 set encoding=utf-8
-set nu
+set nu " enable numbered lines
+set laststatus=2
+
+" make new panes appear on the bottom and right
+set splitbelow
+set splitright
+
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -90,11 +97,5 @@ function! VisualSelection(direction, extra_filter) range
 	endif
 endfunction
 
-if exists("b:did_indent")
-	    finish
-endif
-let b:did_indent = 1
-
-setlocal indentexpr=
-
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set formatoptions-=t " disable word wrapping
+set ic " case insensitive searches
