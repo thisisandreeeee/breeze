@@ -2,15 +2,10 @@
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sudo apt-get update
-	sudo apt-get install git vim
-	sudo apt-get install zsh
-	sudo apt-get install tmux
+	sudo apt-get install git vim zsh tmux
 elif [[ "$OSTYPE" == "darwin*" ]]; then
 	brew update
-	brew install git 
-	brew install macvim --with-cscope --with-lua
-	brew linkapps macvim
-	brew install tmux
+	brew install git vim tmux zsh zsh-completions reattach-to-user-namespace 
 	# ...
 else
 	echo "Invalid OS"
