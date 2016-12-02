@@ -26,7 +26,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'alvan/vim-closetag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,4 +106,20 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" vim abbreviations
+iabbrev ifmain if __name__=="__main__":
+iabbrev ftprint from __future__ import print_function
+iabbrev mplt import matplotlib.pyplot as plt
+iabbrev pandas import pandas as pd
+iabbrev numpy import numpy as np
+iabbrev datetime from datetime import datetime
+
+" shift lines up/down and reindent
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
+" Note that shift-J and shift-K are overwriting previous system mappings
+
