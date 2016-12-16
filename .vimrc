@@ -26,6 +26,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'zyedidia/vim-snake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,6 +45,8 @@ nnoremap <space> za
 set foldmethod=indent
 set foldlevel=99
 set clipboard=unnamed
+hi Folded ctermfg=247
+hi Folded ctermbg=237
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -114,7 +117,8 @@ iabbrev ftprint from __future__ import print_function
 iabbrev mplt import matplotlib.pyplot as plt
 iabbrev pandas import pandas as pd
 iabbrev numpy import numpy as np
-iabbrev datetime from datetime import datetime
+iabbrev datetime from datetime import datetime as dt
+iabbrev init def __init__(self):
 
 " shift lines up/down and reindent
 nnoremap <S-j> :m .+1<CR>==
@@ -122,4 +126,3 @@ nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 " Note that shift-J and shift-K are overwriting previous system mappings
-
