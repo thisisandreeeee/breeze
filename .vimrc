@@ -27,6 +27,7 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'zyedidia/vim-snake'
+Plugin 'tpope/vim-rails'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +42,11 @@ map 0 ^
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" Snake configs
+let g:snake_update = 65
+let g:snake_rows = 25
+let g:snake_cols = 55
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -48,6 +54,8 @@ set clipboard=unnamed
 hi Folded ctermfg=247
 hi Folded ctermbg=237
 
+set tabstop=2 shiftwidth=2      " a tab is two spaces
+set expandtab                   " use spaces, not tabs
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -101,6 +109,7 @@ endfunction
 
 set formatoptions-=t " disable word wrapping
 set ic " case insensitive searches
+set autoread " Auto-reload buffers when files are changed on disk
 
 " easy motion config
 map  / <Plug>(easymotion-sn)
