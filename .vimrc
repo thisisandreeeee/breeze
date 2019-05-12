@@ -43,10 +43,6 @@ syntax on
 colorscheme gruvbox
 set background=dark
 
-map <C-n> :NERDTreeToggle<CR>
-map 0 ^
-" shortcut S-a to maximize nerdtree sidebar
-
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -86,6 +82,10 @@ set laststatus=2
 set splitbelow
 set splitright
 
+" NERDTREE
+map <C-n> :NERDTreeToggle<CR>
+map 0 ^
+" shortcut S-a to maximize nerdtree sidebar
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -93,12 +93,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
 
+" BUFFERS
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 " Move to the next buffer
 map <S-l> :bnext<CR>
 " Move to the previous buffer
