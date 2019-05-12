@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/andre/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -85,21 +85,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export CLICOLOR=1
 
 alias zshrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
-alias rm='rmtrash'
-alias kandifestival='ssh -i ~/.ssh/kandifestival.pem ec2-user@ec2-18-217-12-171.us-east-2.compute.amazonaws.com'
-alias ctags="`brew --prefix`/bin/ctags"
-
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home
-
-export CLICOLOR=1
 
 # golang
-export GOPATH=/Users/andre/go
+export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 
 # pyenv

@@ -21,7 +21,8 @@ tmux source ~/.tmux.conf
 
 chsh -s $(which zsh)
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-cp .zshrc ~/.zshrc
+# not ideal to share zshrc, so we don't copy it
+# cp .zshrc ~/.zshrc
 
 cd ~
 if [[ "$OSTYPE" == "darwin*" ]]; then
@@ -29,8 +30,3 @@ if [[ "$OSTYPE" == "darwin*" ]]; then
 else
 	echo "Unsupported OS ${OSTYPE}"
 fi
-conda update conda
-conda create --name py2 python=2 ipython bs4 pandas numpy scikit-learn matplotlib statsmodels xgboost flask seaborn 
-conda create --name py3 python=3 ipython bs4 pandas numpy scikit-learn matplotlib statsmodels xgboost flask seaborn 
-
-# https://github.com/lysyi3m/osx-terminal-themes.git
