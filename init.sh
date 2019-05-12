@@ -5,7 +5,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sudo apt-get install git vim zsh tmux
 elif [[ "$OSTYPE" == "darwin*" ]]; then
 	brew update
-	brew install git vim tmux zsh zsh-completions reattach-to-user-namespace 
+	brew install git vim tmux zsh zsh-completions reattach-to-user-namespace rmtrash
 else
   echo "Unsupported OS ${OSTYPE}"
 fi

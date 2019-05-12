@@ -89,6 +89,7 @@ export CLICOLOR=1
 
 alias zshrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
+alias rm='rmtrash'
 
 # golang
 export GOPATH="$HOME/go"
