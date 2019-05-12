@@ -32,6 +32,7 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,6 +40,8 @@ filetype plugin indent on    " required
 
 let g:solarized_termcolors = 256
 syntax on
+colorscheme gruvbox
+set background=dark
 
 map <C-n> :NERDTreeToggle<CR>
 map 0 ^
