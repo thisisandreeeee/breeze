@@ -88,23 +88,27 @@ export LANG=en_US.UTF-8
 
 alias zshrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
-alias sa3='source activate py3'
-alias sa2='source activate py2'
 alias rm='rmtrash'
 alias kandifestival='ssh -i ~/.ssh/kandifestival.pem ec2-user@ec2-18-217-12-171.us-east-2.compute.amazonaws.com'
 alias ctags="`brew --prefix`/bin/ctags"
 
-export PATH="/Users/andre/miniconda3/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH=${PATH}:/usr/local/spark/bin
-export PYTHONPATH=~/xgboost/python-package
-export PATH="/usr/local/sbin:$PATH"
 
-# export JAVA_HOME=/Library/Java/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home
 
 export CLICOLOR=1
+
+# golang
 export GOPATH=/Users/andre/go
 export PATH=$GOPATH/bin:$PATH
+
+# pyenv
+export GLOBAL_MINICONDA_VERSION=miniconda3-4.3.30
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# pyenv-virtualenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
