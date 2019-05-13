@@ -92,6 +92,8 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
+let g:NERDTreeShowLineNumbers=1 "enable nerdtree line numbers
+autocmd FileType nerdtree setlocal relativenumber
 
 " BUFFERS
 " Enable the list of buffers
