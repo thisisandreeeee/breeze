@@ -71,9 +71,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Visual mode pressing * searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-
 set encoding=utf-8
 set nu " enable numbered lines
 set laststatus=2
@@ -117,6 +114,8 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
+" Visual mode pressing * searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 function! VisualSelection(direction, extra_filter) range
 	let l:saved_reg = @"
 	execute "normal! vgvy"
@@ -148,6 +147,7 @@ vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 " Note that shift-J and shift-K are overwriting previous system mappings
 
+" ctags for golang
 set tags=./tags,tags;$HOME
 nnoremap <silent> `` :TagbarToggle<CR>
 let g:tagbar_type_go = {
