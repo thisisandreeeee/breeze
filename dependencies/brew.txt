@@ -1,0 +1,6 @@
+git
+vim
+tmux
+zsh
+zsh-completions
+reattach-to-user-namespace
