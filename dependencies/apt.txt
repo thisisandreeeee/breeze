@@ -3,3 +3,4 @@ vim
 zsh
 tmux
 build-essential
+htop
