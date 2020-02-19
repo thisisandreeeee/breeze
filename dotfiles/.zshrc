@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,20 +88,14 @@ export LANG=en_US.UTF-8
 export CLICOLOR=1
 
 alias zshrc='vim ~/.zshrc'
-alias src='source ~/.zshrc'
-alias rm='rmtrash'
+alias src='exec $SHELL'
 
 # golang
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 
 # pyenv
-export GLOBAL_MINICONDA_VERSION=miniconda3-4.3.30
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# pyenv-virtualenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
