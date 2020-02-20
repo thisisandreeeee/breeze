@@ -4,3 +4,4 @@ tmux
 zsh
 zsh-completions
 reattach-to-user-namespace
+ack
