@@ -27,5 +27,5 @@ echo "Installing ${CONDA_VERSION} using pyenv"
 pyenv install $CONDA_VERSION
 pyenv global $CONDA_VERSION
 
-conda create --name default python -y
-pyenv global ${CONDA_VERSION}/envs/default
+# setup empty environment
+conda create --name example python -y
