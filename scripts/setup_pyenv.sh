@@ -16,5 +16,5 @@ echo "Installing ${CONDA_VERSION} using pyenv"
 pyenv install $CONDA_VERSION
 pyenv global $CONDA_VERSION
 
-conda env create --name default --file "${ROOT_DIR}/dependencies/environment.yml"
+conda create --name default python -y
 pyenv global ${CONDA_VERSION}/envs/default
