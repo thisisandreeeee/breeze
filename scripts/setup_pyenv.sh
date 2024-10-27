@@ -4,9 +4,20 @@ ROOT_DIR="$(realpath $(dirname pwd))"
 
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+# Check if all three lines are present in .zshrc
+if ! grep -q 'export PYENV_ROOT="$HOME/.pyenv"' ~/.zshrc || \
+   ! grep -q 'export PATH="$PYENV_ROOT/bin:$PATH"' ~/.zshrc || \
+   ! grep -q 'if command -v pyenv 1>/dev/null 2>&1; then' ~/.zshrc; then
+
+  # Append all three lines as a block if any line is missing
+  {
+    echo 'export PYENV_ROOT="$HOME/.pyenv"'
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"'
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi'
+  } >> ~/.zshrc
+else
+  exit 1
+fi
 
 source ~/.zshrc
 
