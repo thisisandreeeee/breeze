@@ -1,7 +1,9 @@
 git
 vim
+neovim
 tmux
 zsh
 zsh-completions
-reattach-to-user-namespace
+ripgrep
 ack
+htop
