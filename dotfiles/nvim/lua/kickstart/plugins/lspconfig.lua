@@ -173,6 +173,11 @@ return {
           settings = {
             python = {
               pythonPath = '~/.pyenv/shims/python',
+              analysis = {
+                -- ignore = { '*' },
+                -- diagnosticMode = 'off',
+                typeCheckingMode = 'off',
+              },
             },
           },
         },
