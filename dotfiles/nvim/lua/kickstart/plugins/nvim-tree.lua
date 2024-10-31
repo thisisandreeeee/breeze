@@ -19,7 +19,11 @@ return {
       filters = {
         dotfiles = true,
       },
-      update_focused_file = { enable = true, update_cwd = false, ignore_list = {} },
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
+        ignore_list = {},
+      },
       sync_root_with_cwd = true,
     }
 
