@@ -7,3 +7,4 @@ zsh-completions
 ripgrep
 ack
 htop
+lazygit
