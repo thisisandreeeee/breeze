@@ -1,1 +1,0 @@
-CONDA_VERSION=miniconda3-latest

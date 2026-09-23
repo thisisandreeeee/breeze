@@ -17,9 +17,16 @@ else
 fi
 
 install_string=""
-while read line || [[ -n $line ]]; do
+while read -r line || [[ -n $line ]]; do
   install_string+="$line "
-done <<< "$(cat $pkgs_file)"
+done < "$pkgs_file"
 
 echo "Installing $install_string"
 $install_cmd $install_string
+
+# Debian/Ubuntu install these binaries under collision-free names.
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  mkdir -p "$HOME/.local/bin"
+  [[ -e "$HOME/.local/bin/fd" ]] || ln -s "$(command -v fdfind)" "$HOME/.local/bin/fd"
+  [[ -e "$HOME/.local/bin/bat" ]] || ln -s "$(command -v batcat)" "$HOME/.local/bin/bat"
+fi

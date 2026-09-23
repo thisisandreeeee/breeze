@@ -5,6 +5,12 @@ tmux
 zsh
 zsh-completions
 ripgrep
-ack
+fd
+bat
+eza
+zoxide
+fzf
+git-delta
+tlrc
 htop
 lazygit
