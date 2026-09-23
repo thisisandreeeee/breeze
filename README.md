@@ -59,8 +59,6 @@ In Neovim, press `Space` and pause to discover configured commands. Useful start
 | `uv`           | Manage Python versions, environments, and dependencies | `uv run python`      |
 | build tools    | Compilers and `make` (Linux: `build-essential`)        | `make`               |
 
-Notes: Debian/Ubuntu installs `fd` and `bat` as `fdfind` and `batcat`; setup adds the usual names under `~/.local/bin`. `tlrc` (Homebrew) and `tealdeer` (APT) both provide the `tldr` command. `lazygit` is currently installed by the macOS package list only.
-
 The Zsh config maps `grep`, `find`, `cat`, `ls`, and `cd` to `rg`, `fd`, `bat`, `eza`, and `zoxide`. Use `command <name>` to bypass an alias. `Ctrl-t` fuzzy-selects a file and `Alt-c` fuzzy-selects a directory.
 
 ## Quick checks
