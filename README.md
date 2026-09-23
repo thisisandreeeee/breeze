@@ -41,17 +41,17 @@ In Neovim, press `Space` and pause to discover configured commands. Useful start
 ## CLI cheat sheet
 
 | Tool           | What it is for                                         | Example              |
-| -------------- | ------------------------------------------------------ | -------------------- | ----------- |
+| -------------- | ------------------------------------------------------ | -------------------- |
 | `git`          | Version control                                        | `git status`         |
 | `nvim` / `vim` | Terminal editors (`nvim` is the configured default)    | `nvim .`             |
 | `tmux`         | Persistent terminal sessions, windows, and panes       | `tmux attach -t dev` |
 | `zsh`          | Interactive shell                                      | `exec zsh`           |
-| `rg`           | Fast recursive text search                             | `rg 'TODO            | FIXME' src` |
+| `rg`           | Fast recursive text search                             | `rg 'TODO \| FIXME' src` |
 | `fd`           | Friendly file finder                                   | `fd '\.py$'`         |
 | `bat`          | File viewer with highlighting                          | `bat README.md`      |
 | `eza`          | Modern directory listing                               | `eza -lah --git`     |
 | `zoxide`       | Frecency-based directory jumping                       | `z breeze`           |
-| `fzf`          | Fuzzy picker; composes with other tools                | `nvim "$(fd -t f     | fzf)"`      |
+| `fzf`          | Fuzzy picker; composes with other tools                | `nvim "$(fd -t f \| fzf)"` |
 | `delta`        | Readable Git diffs                                     | `git diff`           |
 | `tldr`         | Short command examples                                 | `tldr tmux`          |
 | `htop`         | Interactive process monitor                            | `htop`               |
