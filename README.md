@@ -25,39 +25,39 @@ nvim .                                  # edit the current project
 
 Useful tmux keys (`prefix` is `Ctrl-b`):
 
-| Key | Action |
-| --- | --- |
-| `prefix c` | New window |
-| `prefix ,` | Rename window |
-| `prefix 1..9` | Select project window |
+| Key                     | Action                                      |
+| ----------------------- | ------------------------------------------- |
+| `prefix c`              | New window                                  |
+| `prefix ,`              | Rename window                               |
+| `prefix 1..9`           | Select project window                       |
 | `prefix \` / `prefix -` | Split right / down in the current directory |
-| `Ctrl-h/j/k/l` | Move between Neovim splits and tmux panes |
-| `Alt-h/j/k/l` | Resize a pane |
-| `prefix z` | Zoom/unzoom a pane |
-| `prefix r` | Reload tmux config |
+| `Ctrl-h/j/k/l`          | Move between Neovim splits and tmux panes   |
+| `Alt-h/j/k/l`           | Resize a pane                               |
+| `prefix z`              | Zoom/unzoom a pane                          |
+| `prefix r`              | Reload tmux config                          |
 
 In Neovim, press `Space` and pause to discover configured commands. Useful starting points: `Space sf` (files), `Space sg` (grep), `Ctrl-n` (file tree), `Space gl` (Lazygit), `gd` (definition), and `gr` (references).
 
 ## CLI cheat sheet
 
-| Tool | What it is for | Example |
-| --- | --- | --- |
-| `git` | Version control | `git status` |
-| `nvim` / `vim` | Terminal editors (`nvim` is the configured default) | `nvim .` |
-| `tmux` | Persistent terminal sessions, windows, and panes | `tmux attach -t dev` |
-| `zsh` | Interactive shell | `exec zsh` |
-| `rg` | Fast recursive text search | `rg 'TODO|FIXME' src` |
-| `fd` | Friendly file finder | `fd '\.py$'` |
-| `bat` | File viewer with highlighting | `bat README.md` |
-| `eza` | Modern directory listing | `eza -lah --git` |
-| `zoxide` | Frecency-based directory jumping | `z breeze` |
-| `fzf` | Fuzzy picker; composes with other tools | `nvim "$(fd -t f | fzf)"` |
-| `delta` | Readable Git diffs | `git diff` |
-| `tldr` | Short command examples | `tldr tmux` |
-| `htop` | Interactive process monitor | `htop` |
-| `lazygit` | Terminal UI for Git | `lazygit` |
-| `uv` | Manage Python versions, environments, and dependencies | `uv run python` |
-| build tools | Compilers and `make` (Linux: `build-essential`) | `make` |
+| Tool           | What it is for                                         | Example              |
+| -------------- | ------------------------------------------------------ | -------------------- | ----------- |
+| `git`          | Version control                                        | `git status`         |
+| `nvim` / `vim` | Terminal editors (`nvim` is the configured default)    | `nvim .`             |
+| `tmux`         | Persistent terminal sessions, windows, and panes       | `tmux attach -t dev` |
+| `zsh`          | Interactive shell                                      | `exec zsh`           |
+| `rg`           | Fast recursive text search                             | `rg 'TODO            | FIXME' src` |
+| `fd`           | Friendly file finder                                   | `fd '\.py$'`         |
+| `bat`          | File viewer with highlighting                          | `bat README.md`      |
+| `eza`          | Modern directory listing                               | `eza -lah --git`     |
+| `zoxide`       | Frecency-based directory jumping                       | `z breeze`           |
+| `fzf`          | Fuzzy picker; composes with other tools                | `nvim "$(fd -t f     | fzf)"`      |
+| `delta`        | Readable Git diffs                                     | `git diff`           |
+| `tldr`         | Short command examples                                 | `tldr tmux`          |
+| `htop`         | Interactive process monitor                            | `htop`               |
+| `lazygit`      | Terminal UI for Git                                    | `lazygit`            |
+| `uv`           | Manage Python versions, environments, and dependencies | `uv run python`      |
+| build tools    | Compilers and `make` (Linux: `build-essential`)        | `make`               |
 
 Notes: Debian/Ubuntu installs `fd` and `bat` as `fdfind` and `batcat`; setup adds the usual names under `~/.local/bin`. `tlrc` (Homebrew) and `tealdeer` (APT) both provide the `tldr` command. `lazygit` is currently installed by the macOS package list only.
 
