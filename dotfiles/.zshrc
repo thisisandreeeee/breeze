@@ -70,7 +70,12 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions)
+export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+
+plugins=(git fzf zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,7 +112,21 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export CLICOLOR=1
 
-export PATH=/opt/homebrew/bin:$PATH
+# Modern replacements for the classic Unix commands. Prefix the old command
+# with `command` (for example, `command find`) when its exact syntax is needed.
+alias grep='rg'
+alias find='fd'
+alias cat='bat'
+alias ls='eza --group-directories-first'
+alias l='eza --group-directories-first'
+alias la='eza --all --group-directories-first'
+alias ll='eza --long --all --git --group-directories-first'
+alias lt='eza --tree --level=2 --group-directories-first'
+
+export GIT_PAGER='delta --navigate'
+
+eval "$(zoxide init zsh)"
+alias cd='z'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

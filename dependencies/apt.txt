@@ -3,4 +3,12 @@ vim
 zsh
 tmux
 build-essential
+ripgrep
+fd-find
+bat
+eza
+zoxide
+fzf
+git-delta
+tealdeer
 htop
