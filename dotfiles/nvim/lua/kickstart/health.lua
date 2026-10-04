@@ -30,6 +30,16 @@ local check_external_reqs = function()
     end
   end
 
+  -- Mason.nvim dependencies for tool installation
+  for _, exe in ipairs { 'node', 'npm', 'curl', 'wget', 'tar', 'gzip' } do
+    local is_executable = vim.fn.executable(exe) == 1
+    if is_executable then
+      vim.health.ok(string.format("Found executable: '%s'", exe))
+    else
+      vim.health.warn(string.format("Could not find executable: '%s' (required by Mason.nvim for installing tools like pyright, hadolint, vale, jsonlint)", exe))
+    end
+  end
+
   return true
 end
 

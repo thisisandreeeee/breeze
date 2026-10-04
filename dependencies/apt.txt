@@ -12,3 +12,10 @@ fzf
 git-delta
 tealdeer
 htop
+nodejs
+npm
+unzip
+wget
+curl
+gzip
+tar

@@ -10,7 +10,7 @@ bash ./setup.sh
 
 The setup installs OS packages, Oh My Zsh, Neovim config/plugins, tmux config/plugins, and `uv` for Python projects.
 
-Prerequisites: Homebrew on macOS or `apt` on Linux, plus Node.js. On Linux, install Neovim separately (the APT package list currently installs Vim only).
+Prerequisites: Homebrew on macOS or `apt` on Linux, plus Node.js and npm (required by Mason.nvim to install LSP servers and tools like `pyright`, `hadolint`, `vale`, `jsonlint`, `black`, etc.). On Linux, install Neovim separately (the APT package list currently installs Vim only). Mason also requires `unzip`, `curl`/`wget`, `tar`, and `gzip` for downloading and extracting tool archives.
 
 ## Daily workflow
 
