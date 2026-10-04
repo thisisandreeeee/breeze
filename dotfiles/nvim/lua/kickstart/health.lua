@@ -40,6 +40,16 @@ local check_external_reqs = function()
     end
   end
 
+  -- nvim-treesitter dependencies
+  for _, exe in ipairs { 'tree-sitter', 'cc' } do
+    local is_executable = vim.fn.executable(exe) == 1
+    if is_executable then
+      vim.health.ok(string.format("Found executable: '%s'", exe))
+    else
+      vim.health.warn(string.format("Could not find executable: '%s' (needed by nvim-treesitter for :TSInstallFromGrammar; install via 'brew install tree-sitter-cli' or 'npm install -g tree-sitter-cli')", exe))
+    end
+  end
+
   return true
 end
 

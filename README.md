@@ -10,7 +10,7 @@ bash ./setup.sh
 
 The setup installs OS packages, Oh My Zsh, Neovim config/plugins, tmux config/plugins, and `uv` for Python projects.
 
-Prerequisites: Neovim 0.11+, Homebrew on macOS or `apt` on Linux, plus Node.js and npm (required by Mason.nvim to install LSP servers and tools like `pyright`, `hadolint`, `vale`, `jsonlint`, `black`, etc.). On Linux, install Neovim separately (the APT package list currently installs Vim only). Mason also requires `unzip`, `curl`/`wget`, `tar`, and `gzip` for downloading and extracting tool archives.
+Prerequisites: Neovim 0.11+, Homebrew on macOS or `apt` on Linux, plus Node.js and npm (required by Mason.nvim to install LSP servers and tools like `pyright`, `hadolint`, `vale`, `jsonlint`, `black`, etc.). On Linux, install Neovim separately (the APT package list currently installs Vim only). Mason also requires `unzip`, `curl`/`wget`, `tar`, and `gzip` for downloading and extracting tool archives. nvim-treesitter additionally needs `tree-sitter-cli` (installed automatically by `setup_neovim.sh` via `brew install tree-sitter-cli` on macOS or `npm install -g tree-sitter-cli` on Linux) and a C compiler (`build-essential` on Linux, Xcode CLT on macOS).
 
 ## Daily workflow
 

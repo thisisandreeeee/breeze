@@ -18,3 +18,4 @@ node
 unzip
 wget
 curl
+tree-sitter-cli

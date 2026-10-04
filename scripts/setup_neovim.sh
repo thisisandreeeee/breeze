@@ -13,3 +13,16 @@ else
     echo "On macOS: brew install node"
     exit 1
 fi
+
+# Install tree-sitter-cli if not already present (needed by nvim-treesitter for :TSInstallFromGrammar)
+if ! command -v tree-sitter > /dev/null 2>&1; then
+    echo "tree-sitter-cli not found, installing..."
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        brew install tree-sitter-cli
+    else
+        # On Linux, tree-sitter-cli is not in apt; install via npm (node is already required above)
+        npm install -g tree-sitter-cli
+    fi
+else
+    tree-sitter --version
+fi
