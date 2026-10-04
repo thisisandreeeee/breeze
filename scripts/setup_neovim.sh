@@ -1,15 +1,16 @@
 #!/bin/bash
 
-ROOT_DIR="$(realpath $(dirname pwd))"
+set -euo pipefail
 
-#!/bin/bash
-if type node > /dev/null 2>&1 && which node > /dev/null 2>&1 ;then
-    node -v
-    echo "node is installed, moving nvim configurations"
-    cp -r ${ROOT_DIR}/dotfiles/nvim ~/.config/nvim
-else
-    echo "need to install node first"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if ! command -v node >/dev/null 2>&1; then
+    echo "need to install node first" >&2
     exit 1
 fi
 
-
+node -v
+echo "node is installed, moving nvim configurations"
+mkdir -p "$HOME/.config"
+rm -rf "$HOME/.config/nvim"
+cp -R "${ROOT_DIR}/dotfiles/nvim" "$HOME/.config/nvim"
